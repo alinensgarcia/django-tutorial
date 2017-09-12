@@ -1,0 +1,33 @@
+# matar porta
+sudo fuser -k 8000/tcp
+
+# run server
+~/Documentos/django-tutorial/mysite$ python manage.py runserver
+
+
+
+## Models
+
+Change your models (in models.py).
+Run python manage.py makemigrations to create migrations for those changes
+Run python manage.py migrate to apply those changes to the database.
+
+# returns their SQL
+$ python manage.py sqlmigrate polls 0001
+
+# If you’re interested, you can also run python manage.py check; this checks for any problems in your project without making migrations or touching the database.
+$ python manage.py check
+
+
+## Generic Views
+Let’s convert our poll app to use the generic views system, so we can delete a bunch of our own code. We’ll just have to take a few steps to make the conversion. We will:
+
+1. Convert the URLconf.
+2. Delete some of the old, unneeded views.
+3. Introduce new views based on Django’s generic views.
+
+
+## Tutorial, Part 5 - Automated tests
+
+## Tutorial, Part 6 - Static files management
+That’s what django.contrib.staticfiles is for: it collects static files from each of your applications (and any other places you specify) into a single location that can easily be served in production.
